@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import PythonFsd from './PythonFsd';
+import PythonAi from './PythonAi';
+import JavaFsd from './JavaFsd';
+import JsFsd from './JsFsd';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import Enquiry from './Enquiry';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<PythonFsd/>}/>
+        <Route path='/pyai' element={<PythonAi/>}/>
+        <Route path='/javafsd' element={<JavaFsd/>}/>
+        <Route path='/jsfsd' element={<JsFsd/>}/>
+        <Route path='/enquiry' element={<Enquiry/>}/>
+        <Route path="*" element={<PythonFsd/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
